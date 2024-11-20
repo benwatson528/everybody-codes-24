@@ -3,6 +3,6 @@ EXTRA_PORTIONS = {3: 6, 2: 2, 1: 0, 0: 0}
 
 
 def solve(creature_groups) -> int:
-    return sum(EXTRA_PORTIONS[len([x for x in creature_group if x != "x"])] +
-               sum(CREATURE_SCORES[creature] for creature in creature_group)
-               for creature_group in creature_groups)
+    return sum(EXTRA_PORTIONS[len([c for c in cg if c != "x"])] +
+               sum(CREATURE_SCORES[c] for c in cg)
+               for cg in creature_groups)
